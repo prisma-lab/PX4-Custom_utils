@@ -5,11 +5,9 @@
 This repository contains the files and scripts required to run the PX4 orbital stabilization simulation in a Docker container. The simulation uses ROS2 Foxy and PX4 v1.13.0 firmware versions.
 
 
-## Prerequisites
-Ensure you have the following installed on your system:
-- Docker
+## Prerequisite: Docker
 
-If you do not have Docker installed, you can install it by following the instructions [here](https://docs.docker.com/get-docker/).
+If you do not have Docker installed, you can install it by following the instructions: 
 ```sh
 curl -fsSL get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
@@ -43,7 +41,7 @@ sudo usermod -aG docker $USER
    ```
 2. Start the PX4 SITL simulation:
    ```sh
-   cd PX4-orbit \
+   cd PX4-orbit 
    make px4_sitl gazebo
    ```
 ## Adding ROS2 Packages
