@@ -28,7 +28,9 @@ RUN git clone --recursive https://github.com/eProsima/Fast-DDS-Gen.git -b v1.0.4
 # Additional packages
 RUN apt update && apt install -y --no-install-recommends \    
     tmux \
-    tmuxp 
+    tmuxp \
+    nano \
+    gedit
 
 #COPY tmux.conf .tmux.conf
 
