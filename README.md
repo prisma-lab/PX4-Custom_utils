@@ -22,11 +22,9 @@ sudo usermod -aG docker $USER
 
 ## Installation
 
-
-1. Update PX4 submodules:
+1. Clone the custom PX4 repository in the **PX4-orbit_utils** directory:
    ```sh
-   cd PX4-orbit && git submodule update --init --recursive
-   git tag v1.13.0-dev
+   git clone https://github.com/fp018/PX4-orbit.git --recursive
    ```
 
 2. Build the Docker image:
@@ -44,6 +42,12 @@ sudo usermod -aG docker $USER
    cd PX4-orbit 
    make px4_sitl gazebo
    ```
+3. Start the QGroundControl station:
+   ```sh
+   ./QGroundControl.AppImage
+   ```
+
 ## Adding ROS2 Packages
-The container shares the `ros2_ws` directory with the host machine. You can add additional ROS2 packages to the `ros2_ws` directory.
+
+The container shares the `ros2_ws` directory with the host machine. You can add additional ROS2 packages to the `ros2_ws` directory to be build in the container workspace.
 
