@@ -29,13 +29,13 @@ sudo usermod -aG docker $USER
 
 2. Build the Docker image:
    ```sh
-   docker build -t px4-orbit-ros2-foxy .
+   docker build -f ./Dockerfile/dockerfile-${ROS2_VERSION} -t px4-orbit-ros2-${ROS2_VERSION} .
    ```
 
 ## Running the Simulation
 1. Run the Docker container:
    ```sh
-   ./run_px4_cnt.sh
+   ./run_px4_cnt.sh ${ROS2_VERSION}
    ```
 2. Start the PX4 SITL simulation:
    ```sh

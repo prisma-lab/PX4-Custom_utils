@@ -1,5 +1,16 @@
+# Check if the input argument is provided
+if [ -z "$1" ]; then
+  echo "Error: No ROS2 distribution specified. Please provide 'foxy' or 'humble'."
+  exit 1
+fi
 
-# docker exec -itu 0 px4-ros2 bash  // run root
+# Check if the input is either 'foxy' or 'humble'
+if [ "$1" != "foxy" ] && [ "$1" != "humble" ]; then
+  echo "Error: Invalid ROS2 distribution specified. Please provide 'foxy' or 'humble'."
+  exit 1
+fi
+
+echo "ROS2: $1"
 
 # enable access to xhost from the container
 xhost +
@@ -13,7 +24,7 @@ docker run -it --rm --privileged \
 --mount type=bind,source=$(pwd)/ros2_ws,target=/root/ros2_ws/src/pkg \
 --env="DISPLAY=$DISPLAY" \
 --network host \
---name=px4-orbital-foxy px4-orbit-ros2-foxy bash 
+--name=px4-orbital-$1 px4-orbit-ros2-$1 bash 
 
 
 

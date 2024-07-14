@@ -1,0 +1,49 @@
+# PX4-Orbital Dockerfile
+
+FROM px4-humble-1.14
+
+# # ROS2 workspace
+WORKDIR /root
+
+RUN apt update && apt-get install -y --no-install-recommends \   
+    ros-humble-mavros ros-humble-mavros-extras  \
+    libcanberra-gtk-module libcanberra-gtk3-module \
+    ros-humble-rmw-fastrtps-cpp 
+
+RUN mkdir -p /root/ros2-ws/src \
+    && cd /root/ros2-ws/src \
+    && git clone --single-branch -b 1.14 https://github.com/prisma-lab/px4_msgs.git \
+    && cd .. \
+    && . /opt/ros/humble/setup.sh \
+    && colcon build 
+
+RUN git clone --recursive https://github.com/eProsima/Fast-DDS-Gen.git -b v1.0.4 ~/Fast-RTPS-Gen \
+    && cd ~/Fast-RTPS-Gen \
+    && ./gradlew assemble \
+    && sudo ./gradlew install
+
+# Additional packages
+RUN apt update && apt install -y --no-install-recommends \    
+    tmux \
+    tmuxp \
+    nano \
+    gedit
+
+#COPY tmux.conf .tmux.conf
+
+RUN cd /root/ros2-ws/src \ 
+    && . /root/ros2-ws/install/setup.sh \
+    && git clone --single-branch -b 1.14 https://github.com/prisma-lab/px4_ros_com.git 
+
+# # PX4-Autopilot to fix git submodule update
+
+RUN  git config --global --add safe.directory '*'
+
+# Remove gz Garden and install gazebo classic
+
+RUN sudo apt remove gz-garden -y \
+    && sudo apt install aptitude -y --no-install-recommends \
+    && sudo aptitude install -y --no-install-recommends \
+    gazebo libgazebo11 libgazebo-dev -y \
+    libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+
