@@ -2,7 +2,7 @@
 # PX4-orbit_utils
 
 ## Description
-This repository contains the files and scripts required to run the PX4 orbital stabilization simulation in a Docker container. The simulation uses ROS2 Foxy and PX4 v1.13.0 firmware versions.
+This repository contains the files and scripts required to run the PX4 orbital stabilization simulation in a Docker container. The simulation uses ROS2 Foxy/Humble and PX4 v1.13/v1.14 firmware versions.
 
 
 ## Prerequisite: Docker
