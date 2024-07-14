@@ -24,9 +24,10 @@ sudo usermod -aG docker $USER
 
 1. Clone the custom PX4 repository in the **PX4-orbit_utils** directory:
    ```sh
-   git clone https://github.com/fp018/PX4-orbit.git --recursive
+   git clone --single-branch -b {prisma|v.1.14} https://github.com/fp018/PX4-orbit.git --recursive
    ```
-
+   Select **prisma** for the ROS2 Foxy version and **v.1.14** for the ROS2 Humble version.
+   
 2. Build the Docker image:
    ```sh
    docker build -f ./Dockerfile/dockerfile-${ROS2_VERSION} -t px4-orbit-ros2-${ROS2_VERSION} .
