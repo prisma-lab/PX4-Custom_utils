@@ -1,12 +1,12 @@
 # Check if the input argument is provided
 if [ -z "$1" ]; then
-  echo "Error: No ROS2 distribution specified. Please provide 'foxy' or 'humble'."
+  echo "Error: No ROS2 distribution specified. Please provide 'foxy' or 'humble' or 'humble-gz'."
   exit 1
 fi
 
-# Check if the input is either 'foxy' or 'humble'
-if [ "$1" != "foxy" ] && [ "$1" != "humble" ]; then
-  echo "Error: Invalid ROS2 distribution specified. Please provide 'foxy' or 'humble'."
+# Check if the input is either 'foxy' or 'humble' or 'humble-gz'
+if [ "$1" != "foxy" ] && [ "$1" != "humble" ] && [ "$1" != "humble-gz" ]; then
+  echo "Error: Invalid ROS2 distribution specified. Please provide 'foxy' or 'humble' or 'humble-gz'."
   exit 1
 fi
 
