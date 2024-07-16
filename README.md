@@ -27,10 +27,10 @@ sudo usermod -aG docker $USER
    ```sh
    git clone --single-branch -b prisma https://github.com/fp018/PX4-orbit.git --recursive
    ```
-  For the ROS2 **Humble** version:
+   For the ROS2 **Humble** version:
    ```sh
    git clone --single-branch -b v.1.14 https://github.com/fp018/PX4-orbit.git --recursive
-  ``` 
+   ``` 
    
 2. Build the Docker image:
    ```sh
