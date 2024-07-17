@@ -106,4 +106,3 @@ The container shares the `ros2_ws` directory with the host machine. You can add 
    ros2 topic echo <topic_name>
    ```
 
-These resources and commands should help you get started with PX4, QGroundControl, and integrating PX4 with ROS2 for UAV development and simulations.
