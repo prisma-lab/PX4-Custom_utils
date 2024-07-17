@@ -78,3 +78,32 @@ The container shares the `ros2_ws` directory with the host machine. You can add 
    make px4_sitl gz_x500
    ```
 
+### PX4 Documentation
+- **PX4 Official Documentation**: [PX4 Documentation](https://docs.px4.io/main/en/)
+
+### QGroundControl
+- **Getting Started with QGroundControl**: [QGroundControl Download and Install](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html)
+
+### Orbit Mode for Multicopters
+- **How to Start an Orbit**: [Orbit Multicopter](https://docs.px4.io/main/en/flight_modes_mc/orbit.html#orbit-multicopter)
+
+### Custom Firmware Paper
+- **ICUAS Paper on IEEE Xplore**: [ICUAS Paper](https://ieeexplore.ieee.org/document/10556938/)
+
+### Useful PX4 Simulation Terminal Commands
+- **Takeoff Command**: `commander takeoff`
+- **Land Command**: `commander land`
+- **List All Topics**: `uorb top`
+- **Listen to a Specific Topic**: `listener <name_topic>`
+
+### PX4 with ROS2
+1. **Start Micro XRCE Agent**:
+   ```sh
+   MicroXRCEAgent udp4 -p 8888
+   ```
+2. **Listen to PX4 Topics in ROS2**:
+   ```sh
+   ros2 topic echo <topic_name>
+   ```
+
+These resources and commands should help you get started with PX4, QGroundControl, and integrating PX4 with ROS2 for UAV development and simulations.
