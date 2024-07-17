@@ -62,7 +62,7 @@ The container shares the `ros2_ws` directory with the host machine. You can add 
 1. Clone the custom PX4 repository in the **PX4-orbit_utils** directory:
    
    ```sh 
-   git clone --recurse-submodule --single-branch -b devel https://github.com/fp018/PX4_orbital.git 
+   git clone --recursive --single-branch -b devel https://github.com/fp018/PX4_orbital.git 
    ```
 2. Build the Docker image:
    ```sh
