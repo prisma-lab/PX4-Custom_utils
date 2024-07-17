@@ -74,7 +74,7 @@ RUN apt update && apt install -y --no-install-recommends \
     tmux \
     tmuxp 
 
-COPY tmux.conf .tmux.conf
+#COPY tmux.conf .tmux.conf
 
 # # PX4-Autopilot to fix git submodule update
 
