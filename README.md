@@ -4,6 +4,8 @@
 ## Description
 This repository contains all the files and scripts necessary to run the Custom PX4 Gazebo simulation in a Docker container. Two different Dockerfiles are provided to run both the **ROS2 Foxy-PX4 v1.13** and the **ROS2 Humble-PX4 v1.14** firmware versions.
 
+### Custom PX4 Firmware Paper
+- **ICUAS Paper on IEEE Xplore**: [ICUAS Paper](https://ieeexplore.ieee.org/document/10556938/)
 
 ## Prerequisite: Docker
 
@@ -25,25 +27,31 @@ sudo usermod -aG docker $USER
    ```sh
    git clone https://github.com/prisma-lab/PX4-Custom_utils && cd PX4-Custom_utils
    ```
-2. In the Clone PX4-Custom_utils folder, clone the custom PX4 . 
-   For the ROS2 **Foxy** version:
+
+### Option 1 - ROS2 Foxy-PX4 v1.13:
+2. In the Clone PX4-Custom_utils folder, clone the custom PX4.   
    ```sh
-   git clone --single-branch -b prisma https://github.com/fp018/PX4-orbit.git --recursive
+   cd PX4-Custom_utils && git clone --single-branch -b prisma https://github.com/fp018/PX4-orbit.git --recursive
    ```
-   For the ROS2 **Humble** version:
+3. Build the Docker image:
    ```sh
-   git clone --single-branch -b v.1.14 https://github.com/fp018/PX4-orbit.git --recursive
-   ``` 
-   
-2. Build the Docker image:
-   ```sh
-   docker build -f ./Dockerfile/dockerfile-${ROS2_VERSION} -t px4-orbit-ros2-${ROS2_VERSION} .
-   ```
+   docker build -f ./Dockerfile/dockerfile-foxy -t px4-orbit-ros2-foxy .
+       ```
+### Option 2 - ROS2 Humble-PX4 v1.14:
+
+   2. In the Clone PX4-Custom_utils folder, clone the custom PX4.   
+      ```sh
+      cd PX4-Custom_utils &&  git clone --single-branch -b v.1.14 https://github.com/fp018/PX4-orbit.git --recursive
+      ``` 
+   3. Build the Docker image:
+      ```sh
+      docker build -f ./Dockerfile/dockerfile-humble -t px4-orbit-ros2-humble .
+      ```
    
 ## Running the Simulation
 1. Run the Docker container:
    ```sh
-   ./run_custom_px4_cnt.sh ${ROS2_VERSION}
+   ./run_custom_px4_cnt.sh <ros_version>
    ```
 2. Start the PX4 SITL simulation:
    ```sh
@@ -66,8 +74,7 @@ The container shares the `ros2_ws` directory with the host machine. You can add 
 ### QGroundControl
 - **Getting Started with QGroundControl**: [QGroundControl Download and Install](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html)
 
-### Custom Firmware Paper
-- **ICUAS Paper on IEEE Xplore**: [ICUAS Paper](https://ieeexplore.ieee.org/document/10556938/)
+
 
 
 
