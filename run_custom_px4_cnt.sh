@@ -20,11 +20,11 @@ xhost +
 docker run -it --rm --privileged \
 -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
 -v "/dev:/dev" \
---mount type=bind,source=$(pwd)/PX4-orbit,target=/root/PX4-orbit \
+--mount type=bind,source=$(pwd)/Px4_Tilting_Custom_Control,target=/root/Px4_Tilting_Custom_Control \
 --mount type=bind,source=$(pwd)/ros2_ws,target=/root/ros2_ws/src/pkg \
 --env="DISPLAY=$DISPLAY" \
 --network host \
---name=px4-orbital-$1 px4-orbit-ros2-$1 bash 
+--name=px4-custom-$1 px4-custom-ros2-$1 bash 
 
 
 
