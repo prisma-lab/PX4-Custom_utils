@@ -2,7 +2,7 @@
 # PX4-Custom_utils
 
 ## Description
-This repository contains all the files and scripts necessary to run the Custom PX4 Gazebo simulation in a Docker container. Two different Dockerfiles are provided to run both the ROS2 Foxy -- PX4 v1.13and the ROS2 Humble--PX4 v1.14 firmware versions.
+This repository contains all the files and scripts necessary to run the Custom PX4 Gazebo simulation in a Docker container. Two different Dockerfiles are provided to run both the **ROS2 Foxy-PX4 v1.13** and the **ROS2 Humble-PX4 v1.14** firmware versions.
 
 
 ## Prerequisite: Docker
@@ -21,8 +21,11 @@ sudo usermod -aG docker $USER
 ```
 
 ## Installation
-
-1. Clone the custom PX4 repository in the **PX4-orbit_utils** directory. 
+1. Clone the **PX4-Custom_utils**
+   ```sh
+   git clone https://github.com/prisma-lab/PX4-Custom_utils && cd PX4-Custom_utils
+   ```
+2. In the Clone PX4-Custom_utils folder, clone the custom PX4 . 
    For the ROS2 **Foxy** version:
    ```sh
    git clone --single-branch -b prisma https://github.com/fp018/PX4-orbit.git --recursive
