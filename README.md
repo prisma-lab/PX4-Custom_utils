@@ -36,17 +36,17 @@ sudo usermod -aG docker $USER
 3. Build the Docker image:
    ```sh
    docker build -f ./Dockerfile/dockerfile-foxy -t px4-custom-ros2-foxy .
-       ```
+   ```
 ### Option 2 - ROS2 Humble-PX4 v1.14:
 
-   2. In the Clone PX4-Custom_utils folder, clone the custom PX4.   
-      ```sh
-      cd PX4-Custom_utils &&  git clone --single-branch -b v.1.14 https://github.com/prisma-lab/Px4_Tilting_Custom_Control --recursive
-      ``` 
-   3. Build the Docker image:
-      ```sh
-      docker build -f ./Dockerfile/dockerfile-humble -t px4-custom-ros2-humble .
-      ```
+2. In the Clone PX4-Custom_utils folder, clone the custom PX4.   
+   ```sh
+   cd PX4-Custom_utils &&  git clone --single-branch -b v.1.14 https://github.com/prisma-lab/Px4_Tilting_Custom_Control --recursive
+   ``` 
+3. Build the Docker image:
+   ```sh
+   docker build -f ./Dockerfile/dockerfile-humble -t px4-custom-ros2-humble .
+   ```
    
 ## Running the Simulation
 1. Run the Docker container:
